@@ -1,0 +1,136 @@
+1. De quand date le C ? De quoi le C s'inspire-t-il ?
+
+Le langage C a été créé par Dennis Ritchie vers 1972 aux Bell Labs. Il s'inspire principalement du langage B et de BCPL.
+
+2. Qu'est-ce que BCPL ?
+
+BCPL (Basic Combined Programming Language) est un langage de programmation créé par Martin Richards en 1967. Il a inspiré le langage B, puis le C.
+
+3. Y a-t-il plusieurs versions de C ? Quelle est la version la plus récente ?
+
+Oui, il existe plusieurs normes :
+- C89/C90
+- C99
+- C11
+- C17
+- C23
+C23 est la dernière version standardisée du langage C.
+
+4. Quel est le lien entre le C et UNIX ? Quel est le lien entre le C et Java ?
+- C et UNIX : UNIX a été largement réécrit en C, ce qui a facilité son adaptation à différentes machines.
+- C et Java : Java reprend une syntaxe proche du C, mais utilise une machine virtuelle (JVM) pour exécuter son bytecode.
+5. Quelle est la structure d'un programme C ?
+
+Un programme C contient généralement :
+- Des bibliothèques (#include).
+- Des déclarations de variables et de fonctions.
+- Une fonction principale main().
+- Des instructions.
+Exemple :
+#include <stdio.h>
+
+int main() {
+    printf("Bonjour !");
+    return 0;
+}
+
+6. Qu'est-ce que le préprocesseur et à quoi sert-il ?
+
+Le préprocesseur intervient avant la compilation. Il traite les directives comme #include, #define et #ifdef.
+
+7. Qu'est-ce qu'un fichier Makefile ?
+
+Un Makefile contient des règles permettant d'automatiser la compilation d'un programme avec la commande make.
+
+8. Quels sont les types de base du C ?
+- char : caractère.
+- int : entier.
+- float : nombre décimal.
+- double : nombre décimal plus précis.
+- void : absence de type ou de valeur.
+9. Qu'est-ce qu'une structure ?
+
+Une structure (struct) permet de regrouper plusieurs variables de types différents dans une même entité.
+
+Exemple :
+struct Etudiant {
+    char nom[30];
+    int age;
+};
+
+10. Qu'est-ce qu'un pointeur ?
+
+Un pointeur est une variable qui contient l'adresse mémoire d'une autre variable.
+
+Exemple :
+int nombre = 10;
+int *p = &nombre;
+
+11. Comment savoir la taille d'une variable ?
+
+Avec l'opérateur sizeof() qui retourne sa taille en octets.
+
+Exemple :
+sizeof(int);
+
+12. Comment connaître la valeur des octets d'un entier ?
+
+On utilise un pointeur de type unsigned char pour lire les octets individuellement.
+
+Exemple :
+int n = 258;
+unsigned char *p = (unsigned char *)&n;
+printf("%u", p[0]);
+
+La valeur dépend de l'ordre de stockage des octets de la machine.
+
+13. Comment connaître la valeur d'un octet connaissant son adresse ?
+
+On utilise un pointeur vers unsigned char pour lire l'octet situé à cette adresse.
+
+Exemple :
+unsigned char *p = (unsigned char *)adresse;
+printf("%u", *p);
+
+14. Comment est stocké un tableau à une dimension ?
+
+Les éléments sont stockés les uns à la suite des autres dans des zones mémoire contiguës.
+
+Exemple :
+int tab[3] = {10, 20, 30};
+
+15. Comment est stocké un tableau à deux dimensions ?
+
+En C, les éléments sont stockés de manière contiguë, ligne par ligne.
+
+Exemple :
+int tab[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+16. Dans quel ordre les octets d'un entier sur 16 bits sont-ils stockés ?
+
+Cela dépend de l'architecture :
+- Little Endian : octet de poids faible en premier.
+- Big Endian : octet de poids fort en premier.
+Exemple avec 0x1234 :
+- Little Endian : 34 12.
+- Big Endian : 12 34.
+17. Comment peut-on manipuler des chaînes de caractères ?
+
+Avec des tableaux de caractères terminés par \0 et les fonctions de <string.h> comme :
+- strlen() : longueur.
+- strcpy() : copie.
+- strcmp() : comparaison.
+- strcat() : concaténation.
+18. Est-ce que les chaînes permettent de stocker de l'UTF-8 ?
+
+Oui. Une chaîne C peut stocker de l'UTF-8 sous forme d'octets (char). Certains caractères peuvent occuper plusieurs octets.
+
+19. Qu'est-ce qu'un débogueur ? Donnez un exemple de débogueur pour C et pour Java.
+
+Un débogueur est un outil permettant de rechercher et corriger les erreurs d'un programme en exécutant le code étape par étape.
+- C : GDB.
+- Java : JDB ou le débogueur intégré à IntelliJ IDEA.
+Référence pour la question 3 : comité officiel de normalisation du C (WG14).
