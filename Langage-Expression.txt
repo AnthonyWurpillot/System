@@ -1,0 +1,98 @@
+TD – Programmation système : Langages réguliers et expressions régulières
+
+Questions
+
+1. Qu'est-ce qu'un langage régulier ?
+
+Un langage régulier est un ensemble de mots qui peut être reconnu par un automate fini ou décrit par une expression régulière.
+
+2. Qu'est-ce qu'un langage rationnel ?
+
+Un langage rationnel est un langage qui peut être décrit par une expression rationnelle. Les langages rationnels et réguliers désignent la même chose.
+
+3. Donnez un exemple simple de langage qui n'est pas régulier.
+
+Le langage L = {aⁿbⁿ | n ≥ 0} n'est pas régulier. Il contient autant de a que de b, avec les a avant les b.
+
+Exemples : ab, aabb, aaabbb.
+
+4. Comment définit-on les expressions régulières de base avec « + », « . » et « * » ?
+
++ : représente une alternative (OU).
+
+. : représente la concaténation.
+
+* : représente zéro ou plusieurs répétitions.
+
+Exemple : (a+b)* représente tous les mots possibles composés de a et de b, y compris le mot vide.
+
+5. Y a-t-il un lien entre les langages réguliers et les expressions régulières ?
+
+Oui, chaque expression régulière décrit un langage régulier. Les deux permettent de représenter les mêmes ensembles de mots.
+
+6. Y a-t-il d'autres symboles couramment utilisés dans les expressions régulières de base ?
+
+Oui :
+
+ε : représente le mot vide.
+
+∅ : représente le langage vide.
+
+() : permet de regrouper des expressions.
+
+7. Qui a inventé les expressions régulières et quand ?
+
+Les expressions régulières ont été introduites par le mathématicien Stephen Cole Kleene dans les années 1950, notamment en 1951.
+
+8. À quoi servent les expressions régulières ?
+
+Elles servent à rechercher, vérifier, extraire ou remplacer des parties de texte.
+
+Exemples : vérifier une adresse mail, reconnaître un numéro de téléphone ou rechercher un mot dans un fichier.
+
+9. Il y a différentes sortes d'expressions régulières, mais en quoi diffèrent-elles ?
+
+Elles diffèrent principalement par les symboles disponibles et leur syntaxe.
+
+Simple Regular Expressions : utilisent les opérations de base comme l'alternative, la concaténation et l'étoile de Kleene.
+
+POSIX Basic Regular Expressions (BRE) : utilisent une syntaxe plus limitée, avec notamment \(, \) et \{ \}.
+
+POSIX Extended Regular Expressions (ERE) : proposent une syntaxe plus pratique avec (), +, ? et | sans avoir besoin de les échapper.
+
+Exemple :
+
+BRE : \(chat\|chien\)
+
+ERE : (chat|chien)
+
+
+Alternative en regex POSIX ERE
+
+Commandes Linux utiles
+
+Commande
+
+Utilité
+
+grep
+
+Rechercher du texte
+
+grep -E
+
+Utiliser les expressions régulières étendues
+
+grep -i
+
+Ignorer les majuscules/minuscules
+
+grep -v
+
+Afficher les lignes qui ne correspondent pas
+
+Exemple :
+
+grep -E "chat|chien" fichier.txt
+
+Cette commande affiche les lignes contenant « chat » ou « chien ».

@@ -1,0 +1,65 @@
+TD – Programmation système : Récursion
+
+Questions
+
+1. Qu'est-ce que la récursion ?
+
+La récursion est une technique de programmation dans laquelle une fonction s'appelle elle-même pour résoudre un problème.
+
+Exemple :
+
+int factorielle(int n) {
+    if (n <= 1) return 1;
+    return n * factorielle(n - 1);
+}
+
+2. Qu'est-ce que la récursion terminale ?
+
+C'est une récursion dans laquelle l'appel récursif est la dernière opération effectuée par la fonction.
+
+3. À quoi sert la récursion ?
+
+Elle permet de résoudre des problèmes en les divisant en sous-problèmes plus simples, notamment les arbres et les calculs mathématiques.
+
+4. Est-ce que tous les langages de programmation permettent de faire de la récursion ?
+
+Non, tous les langages ne prennent pas directement en charge la récursion. Cela dépend des possibilités du langage et de son environnement d'exécution.
+
+5. Si non, trouvez un exemple de langage qui n'a pas de récursion.
+
+Brainfuck ne dispose pas de fonctions récursives natives, mais certains mécanismes peuvent être simulés avec sa mémoire.
+
+6. Peut-on transformer un programme itératif en programme récursif ?
+
+Oui, une boucle for ou while peut généralement être remplacée par une fonction récursive.
+
+7. Peut-on faire l'inverse ?
+
+Oui, une fonction récursive peut généralement être transformée en programme itératif avec des boucles et éventuellement une pile.
+
+8. La récursion ralentit-elle un programme ?
+
+Généralement oui, car chaque appel de fonction entraîne un coût supplémentaire.
+
+9. A-t-elle un impact sur la mémoire ?
+
+Oui, chaque appel récursif utilise généralement de la mémoire dans la pile (Stack) pour stocker ses paramètres, ses variables locales et son adresse de retour.
+
+10. Comment la récursivité est-elle gérée par le compilateur ?
+
+Le compilateur génère du code permettant de gérer les appels de fonctions. Chaque appel possède son propre contexte d'exécution, généralement stocké dans la pile.
+
+11. Si une fonction se rappelle elle-même, que deviennent les variables de la première fonction ?
+
+Les variables de la première fonction restent conservées dans la pile pendant l'exécution du nouvel appel. Chaque appel possède ses propres variables locales.
+
+Exemple :
+
+void fonction(int n) {
+    int valeur = n;
+    if (n > 0) {
+        fonction(n - 1);
+    }
+}
+
+Chaque appel possède sa propre variable valeur.
